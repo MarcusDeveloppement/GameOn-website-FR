@@ -20,4 +20,13 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+// **************************************fermeture du formulaire**************************************
 
+document.addEventListener("DOMContentLoaded", function () {
+  const closeInscription = document.getElementById("closeModal");
+  const formBackground = document.querySelector(".bground");
+
+  closeInscription.addEventListener("click", function () {
+    formBackground.style.display = "none";
+  });
+});
