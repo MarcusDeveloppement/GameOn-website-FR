@@ -23,7 +23,7 @@ function launchModal() {
 // **************************************fermeture du formulaire**************************************
 
 document.addEventListener("DOMContentLoaded", function () {
-  const closeInscription = document.getElementById("closeModal");
+  const closeInscription = document.querySelector(".close");
   const formBackground = document.querySelector(".bground");
 
   closeInscription.addEventListener("click", function () {
