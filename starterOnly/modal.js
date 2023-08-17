@@ -25,8 +25,13 @@ function launchModal() {
 document.addEventListener("DOMContentLoaded", function () {
   const closeInscription = document.querySelector(".close");
   const formBackground = document.querySelector(".bground");
+  const closeModal = document.getElementById("submit-close");
 
   closeInscription.addEventListener("click", function () {
+    formBackground.style.display = "none";
+  });
+
+  closeModal.addEventListener("click", () => {
     formBackground.style.display = "none";
   });
 });
@@ -106,8 +111,8 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   // **********message errur si condition non checked**********
 
-  var requiredCheckbox = document.getElementById("checkbox1");
-  var errorCheckboxMessage = document.getElementById("errorCheckboxMessage");
+  let requiredCheckbox = document.getElementById("checkbox1");
+  let errorCheckboxMessage = document.getElementById("errorCheckboxMessage");
 
   if (requiredCheckbox.checked) {
     errorCheckboxMessage.textContent = "";
@@ -117,4 +122,19 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   }
 
   // ****** Affichage du remerciement **********
+  let isValid =
+    errorCheckboxMessage.textContent ||
+    errorRequiredQuantity.textContent ||
+    errorOptionMessage.textContent ||
+    errorEmailMessage.textContent ||
+    errorDateMessage.textContent ||
+    errorMessage2.textContent ||
+    errorMessage1.textContent; // Mettez ici la condition de validation
+
+  if (isValid === "") {
+    let finishing = document.getElementById("modal-finish");
+    let modal = document.querySelector("form");
+    finishing.style.display = "flex";
+    modal.style.display = "none";
+  }
 });
