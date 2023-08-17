@@ -115,4 +115,6 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     errorCheckboxMessage.textContent =
       "Vous devez accepter les termes et conditions.";
   }
+
+  // ****** Affichage du remerciement **********
 });
