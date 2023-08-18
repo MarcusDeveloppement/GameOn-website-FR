@@ -20,7 +20,7 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-// **************************************fermeture du formulaire**************************************
+// **************************************************************************** fermeture du formulaire ***********************************************************
 
 document.addEventListener("DOMContentLoaded", function () {
   const closeInscription = document.querySelector(".close");
@@ -31,20 +31,22 @@ document.addEventListener("DOMContentLoaded", function () {
     formBackground.style.display = "none";
   });
 
+  // ****************** fenetre de remerciement ******************
+
   closeModal.addEventListener("click", () => {
     formBackground.style.display = "none";
   });
 });
 
-// ***************************************Alertes formulaire*******************************************
+// ******************************************************************************* Alertes du formulaire *********************************************************************
 document.getElementById("myForm").addEventListener("submit", function (event) {
   event.preventDefault();
 
-  // *******************message erreur prénom********************
+  // ******************* message erreur prénom ********************
 
-  let input1 = document.getElementById("first");
-  let firstValue = input1.value.trim();
-  let errorMessage1 = document.getElementById("errorMessage1");
+  const input1 = document.getElementById("first");
+  const firstValue = input1.value.trim();
+  const errorMessage1 = document.getElementById("errorMessage1");
 
   if (firstValue.length >= 2) {
     errorMessage1.textContent = "";
@@ -52,10 +54,10 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     errorMessage1.textContent = "Veuillez entrer au moins 2 caractères.";
   }
 
-  // *********************message erreur Nom*********************
-  let input2 = document.getElementById("last");
-  let lastValue = input2.value.trim();
-  let errorMessage2 = document.getElementById("errorMessage2");
+  // ********************* message erreur Nom *********************
+  const input2 = document.getElementById("last");
+  const lastValue = input2.value.trim();
+  const errorMessage2 = document.getElementById("errorMessage2");
 
   if (lastValue.length >= 2) {
     errorMessage2.textContent = "";
@@ -63,10 +65,10 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     errorMessage2.textContent = "Veuillez entrer au moins 2 caractères.";
   }
 
-  // *******************message erreur email*********************
-  let email = document.getElementById("email");
-  let emailValue = email.value.trim();
-  let errorEmailMessage = document.getElementById("errorEmailMessage");
+  // ******************* message erreur email *********************
+  const email = document.getElementById("email");
+  const emailValue = email.value.trim();
+  const errorEmailMessage = document.getElementById("errorEmailMessage");
 
   if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
     errorEmailMessage.textContent = "";
@@ -75,10 +77,10 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
       "Veuillez entrer une adresse e-mail valide.";
   }
 
-  // ******************message erreur date***********************
-  let birthDate = document.getElementById("birthdate");
-  let requiredDateValue = birthDate.value;
-  let errorDateMessage = document.getElementById("errorDateMessage");
+  // ****************** message erreur date ***********************
+  const birthDate = document.getElementById("birthdate");
+  const requiredDateValue = birthDate.value;
+  const errorDateMessage = document.getElementById("errorDateMessage");
 
   if (requiredDateValue) {
     errorDateMessage.textContent = "";
@@ -86,10 +88,12 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     errorDateMessage.textContent = "Veuillez sélectionner une date.";
   }
 
-  // **************message erreur nbr tournois******************
-  let requiredInput = document.getElementById("quantity");
-  let requiredInputValue = requiredInput.value.trim();
-  let errorRequiredQuantity = document.getElementById("errorRequiredQuantity");
+  // ************** message erreur nbr tournois ******************
+  const requiredInput = document.getElementById("quantity");
+  const requiredInputValue = requiredInput.value.trim();
+  const errorRequiredQuantity = document.getElementById(
+    "errorRequiredQuantity"
+  );
 
   if (requiredInputValue.length > 0) {
     errorRequiredQuantity.textContent = "";
@@ -97,8 +101,8 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     errorRequiredQuantity.textContent = "Ce champ est obligatoire.";
   }
 
-  // ******message erreur pour non selection bouton radio*******
-  let errorOptionMessage = document.getElementById("errorOptionMessage");
+  // ****** message erreur pour non selection bouton radio *******
+  const errorOptionMessage = document.getElementById("errorOptionMessage");
   const selectedOption = document.querySelector(
     'input[name="location"]:checked'
   );
@@ -109,10 +113,10 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     errorOptionMessage.textContent = "Veuillez sélectionner une option.";
   }
 
-  // **********message errur si condition non checked**********
+  // ********* message erreur si condition non checked ***********
 
-  let requiredCheckbox = document.getElementById("checkbox1");
-  let errorCheckboxMessage = document.getElementById("errorCheckboxMessage");
+  const requiredCheckbox = document.getElementById("checkbox1");
+  const errorCheckboxMessage = document.getElementById("errorCheckboxMessage");
 
   if (requiredCheckbox.checked) {
     errorCheckboxMessage.textContent = "";
@@ -129,11 +133,11 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     errorEmailMessage.textContent ||
     errorDateMessage.textContent ||
     errorMessage2.textContent ||
-    errorMessage1.textContent; // Mettez ici la condition de validation
+    errorMessage1.textContent;
 
   if (isValid === "") {
-    let finishing = document.getElementById("modal-finish");
-    let modal = document.querySelector("form");
+    const finishing = document.getElementById("modal-finish");
+    const modal = document.querySelector("form");
     finishing.style.display = "flex";
     modal.style.display = "none";
   }
