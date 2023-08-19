@@ -589,7 +589,7 @@ footer {
 /********************** style de la modal terminer  **************************/
 #modal-finish {
   display: none;
-  height: 840px;
+  height: 729px;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
