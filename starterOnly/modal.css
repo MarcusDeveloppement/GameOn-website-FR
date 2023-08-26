@@ -533,12 +533,11 @@ footer {
 
 @media (max-width: 460px) {
   .hero-headline {
-    font-size: 2.9rem;
+    font-size: 2.3rem;
+    font-weight: bold;
   }
   .hero-content {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    margin-left: 4.5rem;
   }
   .hero-section {
     display: flex;
@@ -546,8 +545,8 @@ footer {
     align-items: center;
   }
   .hero-text {
-    width: unset;
-    font-size: 1.2rem;
+    width: 20rem;
+    font-size: 0.78rem;
   }
   .hero-section {
     min-height: 84vh;
@@ -557,16 +556,30 @@ footer {
   }
 }
 
+@media (min-width: 415px) and (max-width: 459px) {
+  .hero-headline {
+    font-size: 2.6rem;
+    font-weight: bold;
+  }
+  .hero-content {
+    margin-left: 2.3rem;
+  }
+  .hero-text {
+    width: 23rem;
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 360px) {
   .hero-text {
-    width: 21rem;
+    width: 20rem;
     font-size: 1.05rem;
     margin-left: 1.5rem;
   }
   .hero-headline {
     font-size: 2.4rem;
     width: 18rem;
-    margin-left: 3rem;
+    margin-left: 1.5rem;
   }
   img {
     width: 13rem;
@@ -593,7 +606,6 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
 }
 
 #modal-finish h2 {
@@ -614,4 +626,8 @@ footer {
   color: #fff;
   font-weight: 600;
   margin-bottom: 2rem;
+  cursor: pointer;
+}
+#modal-finish input:hover {
+  background: #3876ac;
 }

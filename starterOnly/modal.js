@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   closeModal.addEventListener("click", () => {
     formBackground.style.display = "none";
+    window.location.reload();
   });
 });
 
